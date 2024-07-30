@@ -1,0 +1,76 @@
+/* Définir l'animation flicker pour simuler une ampoule brûlée */
+@keyframes flicker {
+    0% { opacity: 1; }
+    5% { opacity: 0.7; }
+    10% { opacity: 1; }
+    15% { opacity: 0.5; }
+    20% { opacity: 1; }
+    25% { opacity: 0.3; }
+    30% { opacity: 1; }
+    35% { opacity: 0.8; }
+    40% { opacity: 1; }
+    45% { opacity: 0.6; }
+    50% { opacity: 1; }
+    55% { opacity: 0.4; }
+    60% { opacity: 1; }
+    65% { opacity: 0.2; }
+    70% { opacity: 1; }
+    75% { opacity: 0.5; }
+    80% { opacity: 1; }
+    85% { opacity: 0.6; }
+    90% { opacity: 1; }
+    95% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Classe pour l'animation flicker infinie */
+.animated-text {
+    animation: flicker 10s ease-in-out infinite;
+}
+
+/* Définir les animations pour les autres éléments */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-animation {
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Styles pour les boutons */
+.btn-blue-marine {
+    background-color: #003366; /* Bleu marine */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-blue-marine:hover {
+    background-color: #002244; /* Teinte plus sombre de bleu marine */
+}
+
+/* Assurez-vous que le texte peut se répartir sur plusieurs lignes */
+.text-lg, .text-xl {
+    white-space: pre-line; /* Permet les retours à la ligne */
+}
+
+/* Styles pour le paragraphe */
+.text-animation {
+    animation: fadeInUp 1s ease-out;
+}
+/* Styles pour les paragraphes avec texte multi-lignes */
+p {
+    max-width: 90%; /* Ajuste la largeur du texte */
+    margin: 0 auto; /* Centre le texte horizontalement */
+    line-height: 1.6; /* Augmente l'espacement entre les lignes */
+}
