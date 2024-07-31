@@ -4,7 +4,7 @@ import { FaEnvelope, FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaXTwitter }
 const Footer = () => {
     return (
         <footer className="bg-gray-950 text-white py-7 mt-0">
-            <div className="container mx-auto flex flex-col items-center space-y-6 md:space-y-4">
+            <div className="container mx-auto flex flex-col items-center space-y-6 md:space-y-7">
                 <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex flex-col md:flex-row justify-between items-center w-full">
                     <nav className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mb-4 md:mb-0 text-center bg-gray-800">
                         {navLinks.map(link => (
@@ -18,8 +18,8 @@ const Footer = () => {
                     </div>
                 </div>
                 
-                <div className="w-auto px-4 text-center mt-10">
-                    <p className="text-gray-400">© 2024 - Présent Rajoharitiana(RaJharit77). Tous droits réservés.</p>
+                <div className="w-full flex justify-center px-4 text-center mt-10 md:px-10">
+                    <p className="text-gray-400">© 2024 - Présent Rajoharitiana (RaJharit77). Tous droits réservés.</p>
                 </div>
             </div>
         </footer>
@@ -31,7 +31,7 @@ const navLinks = [
     { href: "#about", text: "À Propos" },
     { href: "#skills", text: "Compétences" },
     { href: "#projects", text: "Projets" },
-    { href: "#contact", text: "Contacts" },
+    { href: "#contacts", text: "Contacts" },
 ];
 
 const socialLinks = [
