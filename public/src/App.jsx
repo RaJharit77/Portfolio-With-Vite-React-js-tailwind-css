@@ -1,13 +1,13 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { useEffect } from 'react';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Navbar from './components/Navbar';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Footer from './pages/Footer';
+import Home from './pages/Home';
+import Navbar from './pages/Navbar';
+import Projects from './pages/Projects';
+import Skills from './pages/Skills';
 
 const App = () => {
     useEffect(() => {
