@@ -8,7 +8,7 @@ const About = () => {
             <p className="text-lg max-w-2xl" data-aos="fade-up">
                 Bonjour! Je m'appelle Rajoharitiana, un développeur de logiciels créatif et passionné, basé à Madagascar. 
                 J'ai un amour profond pour le codage et j'apprécie le plaisir d'apprendre de nouvelles choses. Avec 
-                une expérience acquise durant ma première année de licence (L1), je suis motivé pour créer des applications web et mobiles.
+                une expérience acquise durant ma deuxième année de licence (L2), je suis motivé pour créer des applications web et mobiles.
                 <br /><br />
                 Je crois que la meilleure façon de grandir est de constamment repousser mes limites et d'explorer de nouvelles technologies. 
                 Qu'il s'agisse de développer des interfaces utilisateur élégantes ou de construire des systèmes back-end robustes, 

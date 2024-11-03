@@ -7,7 +7,7 @@ const Home = () => {
             <img src="/img/RaJharit.jpg" alt="Bienvenue" className="w-3/4 sm:w-1/2 md:w-1/4 lg:w-1/6 mb-6 rounded-full" data-aos="fade-up" />
             <h1 className="text-4xl sm:text-5xl font-bold mb-6 animated-text" data-aos="fade-up">Bienvenue sur mon Portfolio</h1>
             <p className="text-lg sm:text-xl leading-relaxed max-w-3xl mb-8 text-animation" data-aos="fade-up">
-                Je suis actuellement un étudiant en première année du développement
+                Je suis actuellement un étudiant en deuxième année du développement
                 Web du côté Front-end à l'Haute École d'Informatique ou HEI.<br />
                 Je suis motivé pour créer des logiciels créatifs et de la création d'applications Web pour ma passion en
                 Informatique et la nouvelle technologie.<br />

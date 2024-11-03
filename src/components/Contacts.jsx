@@ -1,5 +1,5 @@
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // Assurez-vous d'importer les styles AOS
+import 'aos/dist/aos.css';
 import React from 'react';
 
 AOS.init();
@@ -17,11 +17,11 @@ const Contact = () => {
                             data-aos="fade-up" 
                             data-aos-delay={100 * index}
                         >
-                            <a href={contact.href} className="flex items-center justify-center">
+                            <a href={contact.href} className="flex items-center justify-center" target="_blank"  rel="noopener noreferrer">
                                 <i className={`${contact.icon} text-4xl mb-4`}></i>
                             </a>
                             <p className="text-center">{contact.text}</p>
-                            <a href={contact.href} className="text-blue-500 hover:underline mt-4">{contact.linkText}</a>
+                            <a href={contact.href} className="text-blue-500 hover:underline mt-4" target="_blank"  rel="noopener noreferrer">{contact.linkText}</a>
                         </div>
                     ))}
                 </div>
@@ -32,7 +32,7 @@ const Contact = () => {
 
 const contacts = [
     {
-        href: "https://www.instagram.com/haritiana_h7/",
+        href: "https://www.instagram.com/rajharit_r77/",
         icon: "fab fa-instagram",
         text: "Suivez-moi sur Instagram pour des mises à jour régulières et des aperçus de mes projets en cours.",
         linkText: "Visitez mon Instagram"

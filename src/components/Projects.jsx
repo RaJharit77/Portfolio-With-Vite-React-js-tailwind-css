@@ -1,15 +1,15 @@
 import React from 'react';
 
 const projects = [
-    { title: 'Portfolio', img: '/img/portfolio.png' },
-    { title: 'Visu', img: '/img/Visu.jpg' },
+    { title: 'Portfolio version 1.0', img: '/img/portfolio.png' },
+    { title: 'Delta Restaurant', img: '/img/delta-restaurant.png' },
     { title: 'Le Lotus Bungalow', img: '/img/leLotus.png' },
-    { title: 'Meteo App', img: '/img/MeteoApp.png' },
+    { title: 'Infinitix Blog', img: '/img/infinitix-blog.png' },
+    { title: 'Portfolio version 2.0', img: '/img/MyPortfolio.png' },
+    { title: 'Delta Hotel', img: '/img/delta-hotel.png' },
     { title: 'Site Responsive', img: '/img/SiteResPic.jpg' },
-    { title: 'Site Menu', img: '/img/SiteMenu.png' },
-    { title: 'Portfolio', img: '/img/MyPortfolio.png' },
-    { title: 'Bulma', img: '/img/bulma.jpg' },
     { title: 'Grid', img: '/img/grid.jpg' },
+    { title: 'Site Menu', img: '/img/SiteMenu.png' },
 ];
 
 const Projects = () => {
