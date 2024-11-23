@@ -7,8 +7,8 @@ const projects = [
     { title: 'Infinitix Blog', img: '/img/infinitix-blog.png' },
     { title: 'Portfolio version 2.0', img: '/img/MyPortfolio.png' },
     { title: 'Delta Hotel', img: '/img/delta-hotel.png' },
+    { title: 'Diamond Store', img: '/img/diamond_store.png' },
     { title: 'Site Responsive', img: '/img/SiteResPic.jpg' },
-    { title: 'Grid', img: '/img/grid.jpg' },
     { title: 'Site Menu', img: '/img/SiteMenu.png' },
 ];
 
