@@ -4,7 +4,7 @@ const projects = [
     { title: 'Portfolio version 1.0', img: '/img/portfolio.png' },
     { title: 'Delta Restaurant', img: '/img/delta-restaurant.png' },
     { title: 'Le Lotus Bungalow', img: '/img/leLotus.png' },
-    { title: 'Infinitix Blog', img: '/img/infinitix-blog.png' },
+    { title: 'Infinitix Task', img: '/img/infinitix-task.png' },
     { title: 'Portfolio version 2.0', img: '/img/MyPortfolio.png' },
     { title: 'Delta Hotel', img: '/img/delta-hotel.png' },
     { title: 'Diamond Store', img: '/img/diamond_store.png' },
