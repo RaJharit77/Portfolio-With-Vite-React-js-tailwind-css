@@ -17,6 +17,15 @@ body {
   }
 }
 
+.neon-hover {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.neon-hover:hover {
+  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+  color: #FFD700;
+}
+
 .navbar {
   animation: slideIn 1s ease-out;
 }

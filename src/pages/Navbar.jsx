@@ -44,7 +44,9 @@ const Navbar = () => {
                         <img src="/img/RJ.jpg" alt="Logo" className="h-10 w-10 rounded-full cursor-pointer" />
                     </a>
                     <a href="/">
-                    <div className="text-2xl font-bold text-white cursor-pointer hover:text-yellow-500">Rajoharitiana Raharison</div>
+                        <div className="text-2xl font-bold text-white cursor-pointer neon-hover">
+                            Rajoharitiana Raharison
+                        </div>
                     </a>
                 </div>
                 <div className="md:hidden" onClick={toggleMenu}>
