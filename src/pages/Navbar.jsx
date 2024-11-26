@@ -43,7 +43,9 @@ const Navbar = () => {
                     <a href="https://www.linkedin.com/in/rajoharitiana-raharison-27r7h17a37/">
                         <img src="/img/RJ.jpg" alt="Logo" className="h-10 w-10 rounded-full cursor-pointer" />
                     </a>
-                    <div className="text-2xl font-bold">Rajoharitiana Raharison</div>
+                    <a href="/">
+                    <div className="text-2xl font-bold text-white cursor-pointer hover:text-yellow-500">Rajoharitiana Raharison</div>
+                    </a>
                 </div>
                 <div className="md:hidden" onClick={toggleMenu}>
                     {menuOpen ? <LiaTimesSolid className="text-2xl cursor-pointer" /> : <RiMenu3Line className="text-2xl cursor-pointer" />}

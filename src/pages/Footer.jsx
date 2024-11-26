@@ -19,7 +19,7 @@ const Footer = () => {
                 </div>
                 
                 <div className="w-full flex justify-center px-4 text-center mt-10 md:px-10">
-                    <p className="text-gray-400">© 2024 - Présent Rajoharitiana (RaJharit77). Tous droits réservés.</p>
+                    <p className="text-gray-400">© 2024 - Présent RaJharit77. Tous droits réservés.</p>
                 </div>
             </div>
         </footer>

@@ -1,9 +1,7 @@
 import React from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
-import { DiJqueryLogo } from "react-icons/di";
-import { FaBootstrap, FaCss3Alt, FaFigma, FaGithub, FaHtml5, FaJava, FaJs, FaPython, FaReact } from 'react-icons/fa6';
-import { SiPostgresql, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
-
+import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6'; // Import de l'icône Git
+import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 const skills = [
     { name: 'JavaScript', icon: <FaJs /> },
@@ -11,7 +9,7 @@ const skills = [
     { name: 'HTML', icon: <FaHtml5 /> },
     { name: 'CSS', icon: <FaCss3Alt /> },
     { name: 'Bootstrap', icon: <FaBootstrap /> },
-    { name: 'Postgresql', icon: <SiPostgresql /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql /> },
     { name: 'Figma', icon: <FaFigma /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
     { name: 'Vite JS', icon: <SiVite /> },
@@ -19,8 +17,8 @@ const skills = [
     { name: 'TypeScript', icon: <SiTypescript /> },
     { name: 'Java', icon: <FaJava /> },
     { name: 'Spring Boot', icon: <BiLogoSpringBoot /> },
-    { name: 'Python', icon: <FaPython /> },
-    { name: 'jQuery', icon: <DiJqueryLogo /> },
+    { name: 'Git', icon: <FaGitAlt />},
+    { name: 'Next.js', icon: <SiNextdotjs /> },
 ];
 
 const Skills = () => {
