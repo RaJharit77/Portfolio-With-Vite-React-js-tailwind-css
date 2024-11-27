@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6'; // Import de l'icône Git
-import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import { SiNextdotjs, SiPostgresql, SiSqlite, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 const skills = [
     { name: 'JavaScript', icon: <FaJs /> },
@@ -19,6 +19,7 @@ const skills = [
     { name: 'Spring Boot', icon: <BiLogoSpringBoot /> },
     { name: 'Git', icon: <FaGitAlt />},
     { name: 'Next.js', icon: <SiNextdotjs /> },
+    { name: 'SQLite', icon: <SiSqlite /> },
 ];
 
 const Skills = () => {
