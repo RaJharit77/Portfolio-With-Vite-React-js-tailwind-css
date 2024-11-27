@@ -1,6 +1,6 @@
 import React from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
-import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6'; // Import de l'icône Git
+import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6';
 import { SiNextdotjs, SiPostgresql, SiSqlite, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 const skills = [
