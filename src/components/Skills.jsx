@@ -5,19 +5,19 @@ import { SiNextdotjs, SiPostgresql, SiSqlite, SiTailwindcss, SiTypescript, SiVit
 
 const skills = [
     { name: 'JavaScript', icon: <FaJs /> },
+    { name: 'Git', icon: <FaGitAlt />},
     { name: 'Github', icon: <FaGithub /> },
     { name: 'HTML', icon: <FaHtml5 /> },
     { name: 'CSS', icon: <FaCss3Alt /> },
     { name: 'Bootstrap', icon: <FaBootstrap /> },
-    { name: 'PostgreSQL', icon: <SiPostgresql /> },
-    { name: 'Figma', icon: <FaFigma /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+    { name: 'Figma', icon: <FaFigma /> },
+    { name: 'PostgreSQL', icon: <SiPostgresql /> },
     { name: 'Vite JS', icon: <SiVite /> },
     { name: 'React JS', icon: <FaReact /> },
-    { name: 'TypeScript', icon: <SiTypescript /> },
     { name: 'Java', icon: <FaJava /> },
+    { name: 'TypeScript', icon: <SiTypescript /> },
     { name: 'Spring Boot', icon: <BiLogoSpringBoot /> },
-    { name: 'Git', icon: <FaGitAlt />},
     { name: 'Next.js', icon: <SiNextdotjs /> },
     { name: 'SQLite', icon: <SiSqlite /> },
 ];
