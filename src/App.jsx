@@ -8,6 +8,7 @@ import Home from './pages/HomePage';
 import Navbar from './pages/Navbar';
 import Projects from './pages/ProjectsPage';
 import Skills from './pages/SkillsPage';
+import Tools from './pages/ToolsPage';
 
 const App = () => {
     useEffect(() => {
@@ -23,6 +24,7 @@ const App = () => {
                 <Home />
                 <About />
                 <Skills />
+                <Tools />
                 <Projects />
                 <Contact />
             </main>

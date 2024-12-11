@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6';
-import { SiNextdotjs, SiPostgresql, SiSqlite, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import { SiNextdotjs, SiOpenapiinitiative, SiPostgresql, SiPrisma, SiSqlite, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 const skills = [
     { name: 'JavaScript', icon: <FaJs /> },
@@ -18,7 +18,9 @@ const skills = [
     { name: 'Java', icon: <FaJava /> },
     { name: 'TypeScript', icon: <SiTypescript /> },
     { name: 'Spring Boot', icon: <BiLogoSpringBoot /> },
+    { name: 'OpenAPI', icon: <SiOpenapiinitiative /> },
     { name: 'Next.js', icon: <SiNextdotjs /> },
+    { name: 'Prisma', icon: <SiPrisma /> },
     { name: 'SQLite', icon: <SiSqlite /> },
 ];
 
