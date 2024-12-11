@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6';
-import { SiNextdotjs, SiOpenapiinitiative, SiPostgresql, SiPrisma, SiSqlite, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import { SiNextdotjs, SiOpenapiinitiative, SiPostgresql, SiPrisma, SiReactbootstrap, SiSqlite, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 const skills = [
     { name: 'JavaScript', icon: <FaJs /> },
@@ -13,13 +13,14 @@ const skills = [
     { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
     { name: 'Figma', icon: <FaFigma /> },
     { name: 'PostgreSQL', icon: <SiPostgresql /> },
-    { name: 'Vite JS', icon: <SiVite /> },
-    { name: 'React JS', icon: <FaReact /> },
+    { name: 'Vite.JS', icon: <SiVite /> },
+    { name: 'React Bootstrap', icon: <SiReactbootstrap /> },
+    { name: 'React.JS', icon: <FaReact /> },
     { name: 'Java', icon: <FaJava /> },
     { name: 'TypeScript', icon: <SiTypescript /> },
     { name: 'Spring Boot', icon: <BiLogoSpringBoot /> },
     { name: 'OpenAPI', icon: <SiOpenapiinitiative /> },
-    { name: 'Next.js', icon: <SiNextdotjs /> },
+    { name: 'Next.JS', icon: <SiNextdotjs /> },
     { name: 'Prisma', icon: <SiPrisma /> },
     { name: 'SQLite', icon: <SiSqlite /> },
 ];
