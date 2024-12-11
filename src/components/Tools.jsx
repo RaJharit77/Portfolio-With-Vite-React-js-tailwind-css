@@ -5,7 +5,7 @@ import { VscVscode } from "react-icons/vsc";
 
 const tools = [
     { name: 'VS Code', icon: <VscVscode /> },
-    { name: 'NPM', icon: <SiNpm /> },
+    { name: 'npm', icon: <SiNpm /> },
     { name: 'Render', icon: <SiRender /> },
     { name: 'Intellij Idea', icon: <SiIntellijidea /> },
     { name: 'Maven', icon: <SiApachemaven /> },
@@ -15,10 +15,10 @@ const tools = [
     { name: 'Swagger Editor', icon: <SiSwagger /> },
     { name: 'AWS', icon: <FaAws /> },
     { name: 'Vercel', icon: <SiVercel /> },
-    { name: 'Pnpm', icon: <SiPnpm /> },
+    { name: 'pnpm', icon: <SiPnpm /> },
     { name: 'Jira', icon: <SiJira /> },
-    { name: 'Yarn', icon: <SiYarn /> },
-    { name: 'Bun', icon: <SiBun /> },
+    { name: 'yarn', icon: <SiYarn /> },
+    { name: 'bun', icon: <SiBun /> },
 ];
 
 const Tools = () => {
