@@ -1,6 +1,23 @@
 import React from 'react';
 import { FaEnvelope, FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 
+const navLinks = [
+    { href: "#home", text: "Accueil" },
+    { href: "#about", text: "À Propos" },
+    { href: "#skills", text: "Compétences" },
+    { href: "#projects", text: "Projets" },
+    { href: "#contacts", text: "Contacts" },
+];
+
+const socialLinks = [
+    { href: "https://www.facebook.com/haritiana.hernandez", icon: <FaFacebook /> },
+    { href: "https://www.instagram.com/haritiana_h7/", icon: <FaInstagram /> },
+    { href: "https://www.linkedin.com/in/rajoharitiana-raharison-27r7h17a37/", icon: <FaLinkedin /> },
+    { href: "https://x.com/Rajharit_r77", icon: <FaXTwitter /> },
+    { href: "https://github.com/RaJharit77", icon: <FaGithub /> },
+    { href: "mailto:rajoharitiana.raharison@gmail.com", icon: <FaEnvelope /> },
+];
+
 const Footer = () => {
     return (
         <footer className="bg-gray-950 text-white py-7 mt-0">
@@ -19,28 +36,11 @@ const Footer = () => {
                 </div>
                 
                 <div className="w-full flex justify-center px-4 text-center mt-10 md:px-10">
-                    <p className="text-gray-400">© 2024 - Présent RaJharit77. Tous droits réservés.</p>
+                    <p className="text-gray-400">&copy; {new Date().getFullYear()} - Présent RaJharit77. Tous droits réservés.</p>
                 </div>
             </div>
         </footer>
     );
 };
-
-const navLinks = [
-    { href: "#home", text: "Accueil" },
-    { href: "#about", text: "À Propos" },
-    { href: "#skills", text: "Compétences" },
-    { href: "#projects", text: "Projets" },
-    { href: "#contacts", text: "Contacts" },
-];
-
-const socialLinks = [
-    { href: "https://www.facebook.com/haritiana.hernandez", icon: <FaFacebook /> },
-    { href: "https://www.instagram.com/haritiana_h7/", icon: <FaInstagram /> },
-    { href: "https://www.linkedin.com/in/rajoharitiana-raharison-27r7h17a37/", icon: <FaLinkedin /> },
-    { href: "https://x.com/Rajharit_r77", icon: <FaXTwitter /> },
-    { href: "https://github.com/RaJharit77", icon: <FaGithub /> },
-    { href: "mailto:rajoharitiana.raharison@gmail.com", icon: <FaEnvelope /> },
-];
 
 export default Footer;
