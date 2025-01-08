@@ -16,3 +16,8 @@ Portfolio avec <mark>Vite.JS</mark>, <mark>React.JS</mark>, <mark>Tailwind CSS</
 Voici le lien du portfolio qui a été déployer sur render(https://render.com/) ci-dessous:
 
 Portfolio avec <mark>Vite.JS</mark>, <mark>React.JS</mark>, <mark>Tailwind CSS</mark>: https://rajoharitiana-raharison-rajharit77.onrender.com
+
+### Le Lien du déploiement du site web sur netlify
+Voici le lien du portfolio qui a été déployer sur netlify(https://www.netlify.com/) ci-dessous:
+
+Portfolio avec <mark>Vite.JS</mark>, <mark>React.JS</mark>, <mark>Tailwind CSS</mark>: https://rajoharitiana-raharison-rajharit77.netlify.app
