@@ -7,7 +7,7 @@ const projects = [
     { title: 'Infinitix Task Manager', img: '/img/infinitix-task.png', href: 'https://infinitix-task-manager.onrender.com/' },
     { title: 'Portfolio version 2.0', img: '/img/MyPortfolio.png', href: 'https://rajoharitiana-raharison-rajharit77.vercel.app' },
     { title: 'Delta Hotel', img: '/img/delta-hotel.png', href: 'https://delta-hotel.vercel.app/' },
-    { title: 'Diamond Store', img: '/img/diamond_store.png', href: 'https://diamond-store.vercel.app/' },
+    { title: 'Diamond Store', img: '/img/diamond_store.png', href: 'https://diamond-store-app-madagascar.vercel.app/' },
     { title: 'Site Responsive', img: '/img/SiteResPic.jpg', href: '#' },
     { title: 'Site Menu', img: '/img/SiteMenu.png', href: '#' },
 ];
