@@ -1,4 +1,4 @@
-# Mon portfolio v2.0.0
+# Mon portfolio v2.0.1
 Ceci est le repository de mon premier portfolio publique en tant que L1 passé en L2 chez HEI, j'ai utilisé <mark>Vite.JS</mark>, <mark>React.JS</mark>, <mark>Tailwind css</mark>.
 
 D'abord, j'ai déjà créé quelque portfolio simple pour la première version de mon portfolio avec <mark>Bootstrap</mark> comme framework CSS pour éviter l'écriture trop long des styles CSS et aussi pour faciliter la tâche; en utilisant un template de portfolio d'un développeur sur <mark>Youtube</mark> mais je ne l'ai pas déployer parce qu'il n'y a pas mon style de design dans le portfolio.
