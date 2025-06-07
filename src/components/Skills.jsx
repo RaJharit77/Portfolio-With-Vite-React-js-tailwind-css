@@ -1,39 +1,66 @@
 import React from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6';
-import { SiNextdotjs, SiOpenapiinitiative, SiPostgresql, SiPrisma, SiReactbootstrap, SiSqlite, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import { SiNextdotjs, SiOpenapiinitiative, SiPostgresql, SiPrisma, SiReactbootstrap, SiSqlite, SiTailwindcss, SiTypescript, SiVite, SiPython } from "react-icons/si";
 
 const skills = [
-    { name: 'JavaScript', icon: <FaJs /> },
-    { name: 'Git', icon: <FaGitAlt />},
-    { name: 'Github', icon: <FaGithub /> },
-    { name: 'HTML', icon: <FaHtml5 /> },
-    { name: 'CSS', icon: <FaCss3Alt /> },
-    { name: 'Bootstrap', icon: <FaBootstrap /> },
-    { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
-    { name: 'Figma', icon: <FaFigma /> },
-    { name: 'PostgreSQL', icon: <SiPostgresql /> },
-    { name: 'Vite.JS', icon: <SiVite /> },
-    { name: 'React Bootstrap', icon: <SiReactbootstrap /> },
-    { name: 'React.JS', icon: <FaReact /> },
-    { name: 'Java', icon: <FaJava /> },
-    { name: 'TypeScript', icon: <SiTypescript /> },
-    { name: 'Spring Boot', icon: <BiLogoSpringBoot /> },
-    { name: 'OpenAPI', icon: <SiOpenapiinitiative /> },
-    { name: 'Next.JS', icon: <SiNextdotjs /> },
-    { name: 'Prisma', icon: <SiPrisma /> },
-    { name: 'SQLite', icon: <SiSqlite /> },
+    { name: 'JavaScript', icon: <FaJs />, proficiency: 90 },
+    { name: 'Git', icon: <FaGitAlt />, proficiency: 85 },
+    { name: 'Github', icon: <FaGithub />, proficiency: 86 },
+    { name: 'HTML', icon: <FaHtml5 />, proficiency: 95 },
+    { name: 'CSS', icon: <FaCss3Alt />, proficiency: 94 },
+    /*{ name: 'Bootstrap', icon: <FaBootstrap />, proficiency: 85 },*/
+    { name: 'Tailwind', icon: <SiTailwindcss />, proficiency: 92 },
+    /*{ name: 'Figma', icon: <FaFigma />, proficiency: 75 },*/
+    { name: 'PostgreSQL', icon: <SiPostgresql />, proficiency: 70 },
+    { name: 'Vite.JS', icon: <SiVite />, proficiency: 89 },
+    /*{ name: 'React Bootstrap', icon: <SiReactbootstrap />, proficiency: 82 },*/
+    { name: 'React.JS', icon: <FaReact />, proficiency: 93 },
+    { name: 'Java', icon: <FaJava />, proficiency: 55 },
+    { name: 'TypeScript', icon: <SiTypescript />, proficiency: 90 },
+    { name: 'Spring Boot', icon: <BiLogoSpringBoot />, proficiency: 50 },
+    { name: 'OpenAPI', icon: <SiOpenapiinitiative />, proficiency: 60 },
+    { name: 'SQLite', icon: <SiSqlite />, proficiency: 73 },
+    { name: 'Next.JS', icon: <SiNextdotjs />, proficiency: 87 },
+    { name: 'Prisma', icon: <SiPrisma />, proficiency: 75 },
+    { name: 'Python', icon: <SiPython />, proficiency: 50 },
 ];
 
 const Skills = () => {
     return (
-        <section id="skills" className="py-20">
+        <section id="skills" className="py-20 bg-black text-white">
             <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">Compétences</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 px-4">
                 {skills.map((skill, index) => (
                     <div key={index} className="text-center flex flex-col items-center" data-aos="fade-up" data-aos-delay={index * 100}>
-                        <div className="text-4xl mb-2">{skill.icon}</div>
-                        <p>{skill.name}</p>
+                        <div className="text-4xl mb-2 text-blue-500">{skill.icon}</div>
+                        <p className="font-medium mb-4">{skill.name}</p>
+
+                        <div className="relative w-24 h-24 mb-2">
+                            <svg className="w-full h-full" viewBox="0 0 36 36">
+                                <path
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#2d3748"
+                                    strokeWidth="3"
+                                />
+                                <path
+                                    d="M18 2.0845
+                                    a 15.9155 15.9155 0 0 1 0 31.831
+                                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    fill="none"
+                                    stroke="#1e3a8a"
+                                    strokeWidth="3"
+                                    strokeDasharray={`${skill.proficiency}, 100`}
+                                    strokeLinecap="round"
+                                />
+                            </svg>
+                            <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span className="text-lg font-bold text-blue-500">{skill.proficiency}%</span>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>

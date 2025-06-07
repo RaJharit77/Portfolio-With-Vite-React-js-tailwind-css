@@ -53,11 +53,11 @@ const Navbar = () => {
                     {menuOpen ? <LiaTimesSolid className="text-2xl cursor-pointer" /> : <RiMenu3Line className="text-2xl cursor-pointer" />}
                 </div>
                 <div className={`md:flex md:flex-row md:items-center md:space-x-4 absolute md:static bg-black md:bg-transparent w-full md:w-auto left-0 md:left-auto ${menuOpen ? 'top-14 flex flex-col items-center' : 'top-[-400px]'} transition-all duration-300 ease-in-out`}>
-                    <Link to="home" smooth={true} duration={500} className="hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">Accueil</Link>
-                    <Link to="about" smooth={true} duration={500} className="hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">À Propos</Link>
-                    <Link to="skills" smooth={true} duration={500} className="hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">Compétences</Link>
-                    <Link to="projects" smooth={true} duration={500} className="hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">Projets</Link>
-                    <Link to="contacts" smooth={true} duration={500} className="hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">Contacts</Link>
+                    <Link to="home" smooth={true} duration={500} className="text-blue-500 hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">Accueil</Link>
+                    <Link to="about" smooth={true} duration={500} className="text-blue-500 hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">À Propos</Link>
+                    <Link to="skills" smooth={true} duration={500} className="text-blue-500 hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">Compétences</Link>
+                    <Link to="projects" smooth={true} duration={500} className="text-blue-500 hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">Projets</Link>
+                    <Link to="contacts" smooth={true} duration={500} className="text-blue-500 hover:text-yellow-500 transition-transform transform hover:scale-110 link-hover cursor-pointer py-2 md:py-0">Contacts</Link>
                 </div>
             </div>
         </nav>

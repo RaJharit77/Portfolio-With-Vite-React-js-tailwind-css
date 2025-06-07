@@ -3,7 +3,7 @@ import React from 'react';
 const projects = [
     { title: 'Pokémon Search', img: '/img/PokémonSearch.png', href: 'https://pokemon-search-app-next.vercel.app/' },
     { title: 'Diamond Store', img: '/img/diamond_store.png', href: 'https://diamond-store-app-madagascar.vercel.app/' },
-    { title: 'Site Responsive', img: '/img/SiteResPic.jpg', href: '#' },
+    /*{ title: 'Site Responsive', img: '/img/SiteResPic.jpg', href: '#' },*/
     { title: 'Infinitix Task Manager', img: '/img/infinitix-task.png', href: 'https://infinitix-task-manager.onrender.com/' },
     { title: 'Delta Hotel', img: '/img/delta-hotel.png', href: 'https://delta-hotel.vercel.app/' },
     { title: 'Delta Restaurant', img: '/img/delta-restaurant.png', href: 'https://delta-restaurant.vercel.app/' },
