@@ -28,10 +28,7 @@ const Tools = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 px-4">
                 {tools.map((tool, index) => (
                     <div key={index} className="text-center flex flex-col items-center" data-aos="fade-up" data-aos-delay={index * 100}>
-                        <div className="text-4xl mb-2 text-blue-400">{tool.icon}</div>
-                        <p className="font-medium mb-4">{tool.name}</p>
-                        
-                        <div className="relative w-24 h-24 mb-2">
+                        <div className="relative w-28 h-28 mb-4">
                             <svg className="w-full h-full" viewBox="0 0 36 36">
                                 <path
                                     d="M18 2.0845
@@ -53,8 +50,15 @@ const Tools = () => {
                                 />
                             </svg>
                             <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                                <span className="text-lg font-bold text-blue-400">{tool.proficiency}%</span>
+                                <div className="text-4xl text-blue-400">
+                                    {tool.icon}
+                                </div>
                             </div>
+                        </div>
+
+                        <div className="mt-2">
+                            <p className="text-blue-400 font-bold">{tool.proficiency}%</p>
+                            <p className="font-medium text-lg">{tool.name}</p>
                         </div>
                     </div>
                 ))}
