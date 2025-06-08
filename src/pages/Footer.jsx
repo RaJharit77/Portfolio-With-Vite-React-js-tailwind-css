@@ -11,7 +11,7 @@ const navLinks = [
 
 const socialLinks = [
     { href: "https://www.facebook.com/haritiana.hernandez", icon: <FaFacebook /> },
-    { href: "https://www.instagram.com/haritiana_h7/", icon: <FaInstagram /> },
+    { href: "https://www.instagram.com/rajharit_r77/", icon: <FaInstagram /> },
     { href: "https://www.linkedin.com/in/rajoharitiana-raharison-27r7h17a37/", icon: <FaLinkedin /> },
     { href: "https://x.com/Rajharit_r77", icon: <FaXTwitter /> },
     { href: "https://github.com/RaJharit77", icon: <FaGithub /> },
