@@ -57,8 +57,8 @@ const Tools = () => {
                         </div>
 
                         <div className="mt-2">
-                            <p className="text-blue-400 font-bold">{tool.proficiency}%</p>
                             <p className="font-medium text-lg">{tool.name}</p>
+                            <p className="text-blue-400 font-bold">{tool.proficiency}%</p>
                         </div>
                     </div>
                 ))}
