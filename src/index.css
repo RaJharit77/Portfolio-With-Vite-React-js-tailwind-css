@@ -1,21 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-body {
-  @apply bg-black;
-}
-
-@keyframes slideIn {
-  from {
-      transform: translateY(-100%);
-      opacity: 0;
-  }
-  to {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
+/* SUPPRIMÉ : Animation slideIn inutile */
 
 .neon-hover {
   transition: text-shadow 0.3s ease, color 0.3s ease;
@@ -26,9 +14,7 @@ body {
   color: #FFD700;
 }
 
-.navbar {
-  animation: slideIn 1s ease-out;
-}
+/* SUPPRIMÉ : Styles .navbar inutiles */
 
 .link-hover {
   position: relative;
@@ -41,7 +27,7 @@ body {
   position: absolute;
   width: 0;
   height: 2px;
-  background: #FFD700; /* Jaune */
+  background: #FFD700;
   transition: width 0.3s;
   left: 0;
 }
@@ -59,30 +45,7 @@ body {
   width: 100%;
 }
 
-@keyframes navbarScroll {
-  from {
-      transform: translateY(-100%);
-      opacity: 0;
-  }
-  to {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-.navbar {
-  animation: navbarScroll 1s ease-out;
-}
-
-.navbar-hidden {
-  transform: translateY(-100%);
-  transition: transform 0.3s ease-out;
-}
-
-.navbar-visible {
-  transform: translateY(0);
-  transition: transform 0.3s ease-out;
-}
+/* SUPPRIMÉ : Animation navbarScroll inutile */
 
 html, body {
   height: 100%;
@@ -92,6 +55,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  background-color: #000 !important; /* Fond noir principal */
 }
 
 #root {
@@ -106,9 +70,10 @@ footer {
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #000;
   color: #fff;
 }
+
+/* SUPPRIMÉ : Styles redondants pour body */
 
 /* Navbar */
 nav {
@@ -125,20 +90,9 @@ nav {
   color: #FFD700;
 }
 
-/* Home */
-.home-section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-}
+/* SUPPRIMÉ : Styles .home-section inutiles */
 
-.animated-text {
-  animation: fadeInUp 2s ease-in-out;
-}
-
-.text-animation {
-  animation: fadeIn 2s ease-in-out;
-}
+/* SUPPRIMÉ : Animations .animated-text redondantes */
 
 /* Skills */
 .skill-icon {
@@ -170,12 +124,7 @@ nav {
   transform: scale(1.05);
 }
 
-/* Footer */
-.nav-card, .social-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 1rem;
-}
+/* SUPPRIMÉ : Styles footer inutiles */
 
 /* Keyframes for animations */
 @keyframes fadeIn {
@@ -212,6 +161,23 @@ nav {
   }
 }
 
+section {
+  backdrop-filter: blur(4px);
+}
+
+.text-white, h1, h2, h3, p {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+canvas {
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+}
+
+canvas:hover {
+  opacity: 0.8;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -219,7 +185,7 @@ nav {
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000; /* Fond noir uniforme */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -279,4 +245,98 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.-z-10 {
+  z-index: -10;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+canvas {
+  display: block !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0.7 !important;
+  z-index: -10 !important;
+}
+
+/* Assurer que le contenu est au-dessus du fond */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Amélioration de la visibilité */
+.text-white, h1, h2, h3, p, .btn-blue-marine {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Correction du flou pour la performance */
+section {
+  backdrop-filter: blur(2px);
+}
+
+/* Fond noir pour les sections avec transparence */
+.bg-black\/50 {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Amélioration de la lisibilité du texte */
+h1, h2, h3, h4, h5, h6, p, span, div {
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+}
+
+/* Conteneurs semi-transparents pour les sections */
+section {
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 95%;
+}
+
+/* Boutons avec contraste amélioré */
+.btn-blue-marine {
+  background-color: #003366;
+  color: white;
+  border: 1px solid #3B82F6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.btn-blue-marine:hover {
+  background-color: #002244;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+}
+
+/* Cartes de projet et contact avec fond semi-transparent */
+.project-card, .contact-card {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Animation subtile au survol */
+.project-card:hover, .contact-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  transition: all 0.3s ease;
+}
+
+/* Pour les compétences et outils */
+#skills, #tools {
+  background-color: rgba(0, 0, 0, 0.4);
 }

@@ -9,26 +9,32 @@ import Navbar from './pages/Navbar';
 import Projects from './pages/ProjectsPage';
 import Skills from './pages/SkillsPage';
 import Tools from './pages/ToolsPage';
+import ThreeBackground from './components/ThreeBackground';
 
 const App = () => {
     useEffect(() => {
         AOS.init({
             duration: 1000,
+            once: true,
         });
     }, []);
 
     return (
-        <div className="bg-black text-gray-100">
-            <Navbar />
-            <main className="flex flex-col items-center justify-center w-full">
-                <Home />
-                <About />
-                <Skills />
-                <Tools />
-                <Projects />
-                <Contact />
-            </main>
-            <Footer />
+        <div className="relative min-h-screen text-gray-100 overflow-hidden">
+            <ThreeBackground />
+
+            <div className="relative z-10">
+                <Navbar />
+                <main className="flex flex-col items-center justify-center w-full">
+                    <Home />
+                    <About />
+                    <Skills />
+                    <Tools />
+                    <Projects />
+                    <Contact />
+                </main>
+                <Footer />
+            </div>
         </div>
     );
 };

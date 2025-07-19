@@ -23,7 +23,7 @@ const tools = [
 
 const Tools = () => {
     return (
-        <section id="tools" className="py-20 bg-black text-white">
+        <section id="tools" className="py-20 bg-black/50 text-white">
             <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">Outils</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 px-4">
                 {tools.map((tool, index) => (

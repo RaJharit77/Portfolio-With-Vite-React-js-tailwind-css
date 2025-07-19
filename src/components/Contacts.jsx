@@ -2,34 +2,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React from 'react';
 
-AOS.init();
-
-const Contact = () => {
-    return (
-        <section id="contacts" className="py-20 bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen w-full">
-            <div className="container mx-auto px-4 lg:w-3/4">
-                <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">Contact</h2>
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
-                    {contacts.map((contact, index) => (
-                        <div 
-                            key={contact.href}
-                            className="flex flex-col items-center justify-center bg-gray-800 p-8 rounded shadow-md hover:shadow-yellow-500 cursor-pointer" 
-                            data-aos="fade-up" 
-                            data-aos-delay={100 * index}
-                        >
-                            <a href={contact.href} className="flex items-center justify-center" target="_blank"  rel="noopener noreferrer">
-                                <i className={`${contact.icon} text-4xl mb-4`}></i>
-                            </a>
-                            <p className="text-center">{contact.text}</p>
-                            <a href={contact.href} className="text-blue-500 hover:underline mt-4" target="_blank"  rel="noopener noreferrer">{contact.linkText}</a>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
-
 const contacts = [
     {
         href: "https://www.instagram.com/rajharit_r77/",
@@ -56,5 +28,33 @@ const contacts = [
         linkText: "Envoyez-moi un email"
     }
 ];
+
+AOS.init();
+
+const Contact = () => {
+    return (
+        <section id="contacts" className="py-20 bg-gray-900/80 text-white flex flex-col items-center justify-center min-h-screen w-full">
+            <div className="container mx-auto px-4 lg:w-3/4">
+                <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">Contact</h2>
+                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+                    {contacts.map((contact, index) => (
+                        <div
+                            key={contact.href}
+                            className="flex flex-col items-center justify-center bg-gray-800 p-8 rounded shadow-md hover:shadow-yellow-500 cursor-pointer"
+                            data-aos="fade-up"
+                            data-aos-delay={100 * index}
+                        >
+                            <a href={contact.href} className="flex items-center justify-center" target="_blank" rel="noopener noreferrer">
+                                <i className={`${contact.icon} text-4xl mb-4`}></i>
+                            </a>
+                            <p className="text-center">{contact.text}</p>
+                            <a href={contact.href} className="text-blue-500 hover:underline mt-4" target="_blank" rel="noopener noreferrer">{contact.linkText}</a>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
 
 export default Contact;
