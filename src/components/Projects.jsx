@@ -1,9 +1,9 @@
 import React from 'react';
 
 const projects = [
+    { title: 'Weather Dashboard', img: '/img/Weather-Project.png', href: 'https://5a2b83b8.us2a.app.preset.io/superset/dashboard/9/?native_filters_key=fAf4P3NHJBNPhnjlARWRqgWVDzOqpmS3Y_aK9A_beVEkI-ng8A9vlBeqd1uBpo7I' },
     { title: 'Pokémon Search', img: '/img/PokémonSearch.png', href: 'https://pokemon-search-app-next.vercel.app/' },
     { title: 'Diamond Store', img: '/img/diamond_store.png', href: 'https://diamond-store-app-madagascar.vercel.app/' },
-    /*{ title: 'Site Responsive', img: '/img/SiteResPic.jpg', href: '#' },*/
     { title: 'Infinitix Task Manager', img: '/img/infinitix-task.png', href: 'https://infinitix-task-manager.onrender.com/' },
     { title: 'Delta Hotel', img: '/img/delta-hotel.png', href: 'https://delta-hotel.vercel.app/' },
     { title: 'Delta Restaurant', img: '/img/delta-restaurant.png', href: 'https://delta-restaurant.vercel.app/' },

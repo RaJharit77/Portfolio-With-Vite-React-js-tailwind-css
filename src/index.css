@@ -1,9 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
-/* SUPPRIMÉ : Animation slideIn inutile */
 
 .neon-hover {
   transition: text-shadow 0.3s ease, color 0.3s ease;
@@ -13,8 +11,6 @@
   text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
   color: #FFD700;
 }
-
-/* SUPPRIMÉ : Styles .navbar inutiles */
 
 .link-hover {
   position: relative;
@@ -45,8 +41,6 @@
   width: 100%;
 }
 
-/* SUPPRIMÉ : Animation navbarScroll inutile */
-
 html, body {
   height: 100%;
   margin: 0;
@@ -55,7 +49,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #000 !important; /* Fond noir principal */
+  background-color: #000 !important;
 }
 
 #root {
@@ -69,11 +63,9 @@ footer {
 /* Global Styles */
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter','Poppins', 'Arial', sans-serif;
   color: #fff;
 }
-
-/* SUPPRIMÉ : Styles redondants pour body */
 
 /* Navbar */
 nav {
@@ -89,10 +81,6 @@ nav {
   transform: scale(1.1);
   color: #FFD700;
 }
-
-/* SUPPRIMÉ : Styles .home-section inutiles */
-
-/* SUPPRIMÉ : Animations .animated-text redondantes */
 
 /* Skills */
 .skill-icon {
@@ -124,9 +112,6 @@ nav {
   transform: scale(1.05);
 }
 
-/* SUPPRIMÉ : Styles footer inutiles */
-
-/* Keyframes for animations */
 @keyframes fadeIn {
   from {
       opacity: 0;
@@ -169,13 +154,17 @@ section {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
-canvas {
+/*canvas {
   opacity: 0.5;
   transition: opacity 0.5s ease;
 }
 
 canvas:hover {
   opacity: 0.8;
+}*/
+
+canvas {
+  opacity: 1 !important;
 }
 
 :root {

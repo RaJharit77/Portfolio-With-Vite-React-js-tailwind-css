@@ -57,6 +57,7 @@ const Stars = (props) => {
                     size={0.015}
                     sizeAttenuation={true}
                     depthWrite={false}
+                    opacity={1}
                 />
             </Points>
 
@@ -72,6 +73,7 @@ const Stars = (props) => {
                     size={0.02}
                     sizeAttenuation={true}
                     depthWrite={false}
+                    opacity={1}
                 />
             </Points>
         </group>
