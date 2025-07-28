@@ -8,6 +8,10 @@ export default {
     extend: {
       colors: {
         navy: '#001f3f',
+        deepBlue: '#0F172A',
+        midnight: '#1E293B',
+        accentBlue: '#3B82F6',
+        accentGold: '#FBBF24',
       },
     },
   },
