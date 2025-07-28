@@ -8,7 +8,6 @@ const ThreeBackground = () => {
         const ctx = canvas.getContext('2d');
         let animationFrameId;
 
-        // Ajustement responsive
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -17,12 +16,10 @@ const ThreeBackground = () => {
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
-        // Configuration des étoiles
         const stars = [];
         const starCount = Math.min(1000, window.innerWidth * window.innerHeight / 300);
         const colors = ['#ffffff', '#9bb0ff', '#aabfff', '#cad7ff', '#f8f7ff', '#d4eaff'];
 
-        // Création des étoiles
         for (let i = 0; i < starCount; i++) {
             stars.push({
                 x: Math.random() * canvas.width,
@@ -34,11 +31,9 @@ const ThreeBackground = () => {
             });
         }
 
-        // Fonction d'animation
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Fond dégradé spatial
             const gradient = ctx.createRadialGradient(
                 canvas.width / 2, canvas.height / 2, 0,
                 canvas.width / 2, canvas.height / 2, canvas.width * 0.8
@@ -48,14 +43,12 @@ const ThreeBackground = () => {
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Dessin des étoiles
             stars.forEach(star => {
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
                 ctx.fillStyle = `rgba(${hexToRgb(star.color)}, ${star.opacity})`;
                 ctx.fill();
 
-                // Mouvement parallaxe
                 star.x -= star.speed;
                 if (star.x < 0) {
                     star.x = canvas.width;
@@ -63,7 +56,6 @@ const ThreeBackground = () => {
                 }
             });
 
-            // Effet de poussière galactique
             ctx.beginPath();
             for (let i = 0; i < 5; i++) {
                 const centerX = canvas.width * (0.2 + Math.random() * 0.6);
@@ -93,7 +85,6 @@ const ThreeBackground = () => {
         };
     }, []);
 
-    // Fonction utilitaire pour convertir les couleurs
     const hexToRgb = (hex) => {
         const r = parseInt(hex.slice(1, 3), 16);
         const g = parseInt(hex.slice(3, 5), 16);
