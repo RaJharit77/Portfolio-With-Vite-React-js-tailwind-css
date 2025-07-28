@@ -2,14 +2,15 @@ import React from 'react';
 import { FaAws } from "react-icons/fa6";
 import { SiApachemaven, SiBun, SiGradle, SiIntellijidea, SiJira, SiNpm, SiPnpm, SiPostman, SiRender, SiJupyter, SiSwagger, SiVercel, SiYarn } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import { motion } from 'framer-motion';
 
 const tools = [
     { name: 'VS Code', icon: <VscVscode />, proficiency: 98 },
     { name: 'npm', icon: <SiNpm />, proficiency: 97 },
-    { name: 'Render', icon: <SiRender />, proficiency: 80 },
-    { name: 'Intellij Idea', icon: <SiIntellijidea />, proficiency: 75 },
+    { name: 'Render', icon: <SiRender />, proficiency: 84 },
+    { name: 'Intellij Idea', icon: <SiIntellijidea />, proficiency: 74 },
     { name: 'Maven', icon: <SiApachemaven />, proficiency: 75 },
-    { name: 'Gradle', icon: <SiGradle />, proficiency: 30 },
+    { name: 'Gradle', icon: <SiGradle />, proficiency: 37 },
     { name: 'PostMan', icon: <SiPostman />, proficiency: 90 },
     { name: 'Swagger Editor', icon: <SiSwagger />, proficiency: 71 },
     { name: 'AWS', icon: <FaAws />, proficiency: 35 },
@@ -18,7 +19,7 @@ const tools = [
     { name: 'Jira', icon: <SiJira />, proficiency: 67 },
     { name: 'yarn', icon: <SiYarn />, proficiency: 57 },
     { name: 'bun', icon: <SiBun />, proficiency: 47 },
-    { name: 'Jupyter Notebook', icon: <SiJupyter />, proficiency: 70 },
+    { name: 'Jupyter Notebook', icon: <SiJupyter />, proficiency: 73 },
 ];
 
 const Tools = () => {
@@ -27,7 +28,18 @@ const Tools = () => {
             <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">Outils</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 px-4">
                 {tools.map((tool, index) => (
-                    <div key={index} className="text-center flex flex-col items-center" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <motion.div
+                        key={index}
+                        className="text-center flex flex-col items-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 0.5,
+                            delay: index * 0.1
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                    >
                         <div className="relative w-28 h-28 mb-4">
                             <svg className="w-full h-full" viewBox="0 0 36 36">
                                 <path
@@ -60,7 +72,7 @@ const Tools = () => {
                             <p className="font-medium text-lg">{tool.name}</p>
                             <p className="text-blue-400 font-bold">{tool.proficiency}%</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const About = () => {
     const handleDownloadCV = () => {
@@ -13,7 +14,15 @@ const About = () => {
 
     return (
         <section id="about" className="min-h-screen flex flex-col items-center justify-center text-center text-white p-4">
-            <h2 className="text-4xl font-bold mb-6" data-aos="fade-up">À Propos de Moi</h2>
+            <motion.h2
+                className="text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+            >
+                À Propos de Moi
+            </motion.h2>
             <h3 className="text-2xl font-semibold mb-6 text-blue-500" data-aos="fade-up">Je vais me présenter...</h3>
             <p className="text-lg max-w-2xl mb-8" data-aos="fade-up">
                 Bonjour ! Je m'appelle Rajoharitiana, un développeur front-end créatif et passionné basé à Madagascar. Je suis spécialisé dans la conception et le développement d'interfaces utilisateur modernes et intuitives,
@@ -28,13 +37,18 @@ const About = () => {
                 En dehors du développement, je me passionne pour les échecs, la lecture d'ouvrages sur la technologie et les balades en plein air,
                 qui m'aident à trouver l'inspiration et à rester motivé.
             </p>
-            <button
+            <motion.button
                 onClick={handleDownloadCV}
                 className="btn-blue-marine text-white hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300"
-                data-aos="fade-up"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
             >
                 Télécharger mon CV
-            </button>
+            </motion.button>
         </section>
     );
 };

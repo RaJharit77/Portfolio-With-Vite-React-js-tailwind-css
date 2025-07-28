@@ -3,6 +3,289 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #000;
+  overflow-x: hidden;
+  font-family: 'Inter','Poppins', 'Arial', sans-serif;
+  color: #fff;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+  width: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Classes utilitaires */
+.fixed {
+  position: fixed;
+}
+
+.relative {
+  position: relative;
+}
+
+.-z-10 {
+  z-index: -10;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+/* Styles pour les sections */
+section {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(5, 10, 30, 0.85);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(100, 150, 255, 0.15);
+  border-radius: 16px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  max-width: 95%;
+}
+
+/* Amélioration de la visibilité du texte */
+.text-white, h1, h2, h3, p, .btn-blue-marine, li {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 
+               0 0 10px rgba(100, 120, 255, 0.3);
+}
+
+/* Boutons */
+.btn-blue-marine {
+  background-color: #003366;
+  color: white;
+  border: 1px solid #3B82F6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  transition: all 0.3s ease;
+}
+
+.btn-blue-marine:hover {
+  background-color: #002244;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+}
+
+/* Cartes de projet et contact */
+.project-card, .contact-card {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  transform: translateZ(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover, .contact-card:hover {
+  transform: translateY(-5px) translateZ(10px);
+  box-shadow: 0 15px 40px rgba(0, 100, 255, 0.4);
+}
+
+/* Animation de texte */
+.animated-text {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-text::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #003366, #3B82F6, #003366);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.animated-text:hover::after {
+  transform: scaleX(1);
+}
+
+/* Navbar */
+nav {
+  background-color: #000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav-link {
+  transition: transform 0.3s;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+  color: #FFD700;
+}
+
+/* Animation flicker pour le texte */
+@keyframes flicker {
+  0% { opacity: 1; }
+  5% { opacity: 0.7; }
+  10% { opacity: 1; }
+  15% { opacity: 0.5; }
+  20% { opacity: 1; }
+  25% { opacity: 0.3; }
+  30% { opacity: 1; }
+  35% { opacity: 0.8; }
+  40% { opacity: 1; }
+  45% { opacity: 0.6; }
+  50% { opacity: 1; }
+  55% { opacity: 0.4; }
+  60% { opacity: 1; }
+  65% { opacity: 0.2; }
+  70% { opacity: 1; }
+  75% { opacity: 0.5; }
+  80% { opacity: 1; }
+  85% { opacity: 0.6; }
+  90% { opacity: 1; }
+  95% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.animated-text {
+  animation: flicker 7s linear infinite;
+}
+
+/* Animation fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-animation {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Styles pour les paragraphes */
+p {
+  max-width: 90%;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Styles responsives */
+@media (max-width: 768px) {
+  .grid-cols-5, .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .flex-col-on-mobile {
+    flex-direction: column;
+  }
+  
+  .text-lg, .text-xl {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .min-h-screen {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  
+  .p-8 {
+    padding: 1.5rem;
+  }
+  
+  .gap-10 {
+    gap: 1.5rem;
+  }
+  
+  .py-20 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Ajustements spécifiques pour le navbar en mobile */
+  nav .container {
+    padding: 0.5rem 1rem; /* Réduire le padding */
+  }
+
+  nav img {
+    height: 2rem; /* Taille du logo */
+    width: 2rem;
+  }
+
+  nav .text-xl {
+    font-size: 1rem; /* Taille du texte */
+  }
+}
+
+/* Effets de survol pour les liens */
 .neon-hover {
   transition: text-shadow 0.3s ease, color 0.3s ease;
 }
@@ -41,299 +324,7 @@
   width: 100%;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  background-color: #000 !important;
-}
-
-#root {
-  flex: 1;
-}
-
-footer {
-  margin-top: auto;
-}
-
-/* Global Styles */
-body {
-  margin: 0;
-  font-family: 'Inter','Poppins', 'Arial', sans-serif;
-  color: #fff;
-}
-
-/* Navbar */
-nav {
-  background-color: #000;
-  transition: transform 0.3s ease-in-out;
-}
-
-.nav-link {
-  transition: transform 0.3s;
-}
-
-.nav-link:hover {
-  transform: scale(1.1);
-  color: #FFD700;
-}
-
-/* Skills */
-.skill-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-
-/* Projects */
-.project-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 1rem;
-  transition: transform 0.3s;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-}
-
-/* Contact */
-.contact-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 1rem;
-  transition: transform 0.3s;
-}
-
-.contact-card:hover {
-  transform: scale(1.05);
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .flex-col {
-      flex-direction: column;
-  }
-  
-  .space-x-4 {
-      margin: 0;
-  }
-
-  .container {
-      padding: 0 1rem;
-  }
-}
-
-section {
-  backdrop-filter: blur(4px);
-}
-
-.text-white, h1, h2, h3, p {
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
-}
-
-/*canvas {
-  opacity: 0.5;
-  transition: opacity 0.5s ease;
-}
-
-canvas:hover {
-  opacity: 0.8;
-}*/
-
-/*canvas {
-  opacity: 1 !important;
-}*/
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
-.fixed {
-  position: fixed;
-}
-
-.relative {
-  position: relative;
-}
-
-.-z-10 {
-  z-index: -10;
-}
-
-.z-10 {
-  z-index: 10;
-}
-
-/*canvas {
-  display: block !important;
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  opacity: 0.8 !important;
-  z-index: -1 !important;
-}*/
-
-/* Assurer que le contenu est au-dessus du fond */
-section {
-  position: relative;
-  z-index: 1;
-}
-
-/* Amélioration de la visibilité */
-.text-white, h1, h2, h3, p, .btn-blue-marine {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-/* Correction du flou pour la performance */
-section {
-  backdrop-filter: blur(2px);
-}
-
-/* Fond noir pour les sections avec transparence */
-.bg-black\/50 {
-  background-color: rgba(0, 0, 0, 0.7) !important;
-}
-
-/* Amélioration de la lisibilité du texte */
-h1, h2, h3, h4, h5, h6, p, span, div {
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
-}
-
-/* Conteneurs semi-transparents pour les sections */
-section {
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  padding: 2rem;
-  margin: 1rem auto;
-  max-width: 95%;
-}
-
-/* Boutons avec contraste amélioré */
-.btn-blue-marine {
-  background-color: #003366;
-  color: white;
-  border: 1px solid #3B82F6;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-}
-
-.btn-blue-marine:hover {
-  background-color: #002244;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
-}
-
-/* Cartes de projet et contact avec fond semi-transparent */
-.project-card, .contact-card {
-  background: rgba(0, 0, 0, 0.5) !important;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-/* Animation subtile au survol */
-.project-card:hover, .contact-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
-  transition: all 0.3s ease;
-}
-
-/* Pour les compétences et outils */
-#skills, #tools {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-body {
-  background-color: #000;
-  overflow-x: hidden;
-}
-
+/* Canvas pour le fond */
 canvas {
   position: fixed;
   top: 0;
@@ -341,17 +332,4 @@ canvas {
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-/* Assurez la lisibilité du contenu */
-section {
-  background-color: rgba(0, 0, 20, 0.4);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(100, 120, 255, 0.1);
-}
-
-/* Améliorez la visibilité du texte */
-h1, h2, h3, h4, p, li {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 
-              0 0 10px rgba(100, 120, 255, 0.3);
 }

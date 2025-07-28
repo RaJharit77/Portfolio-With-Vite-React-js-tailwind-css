@@ -2,6 +2,7 @@ import React from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6';
 import { SiNextdotjs, SiOpenapiinitiative, SiPostgresql, SiPrisma, SiReactbootstrap, SiSqlite, SiTailwindcss, SiTypescript, SiVite, SiPython } from "react-icons/si";
+import { motion } from 'framer-motion';
 
 const skills = [
     { name: 'JavaScript', icon: <FaJs />, proficiency: 90 },
@@ -32,7 +33,18 @@ const Skills = () => {
             <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">Compétences</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 px-4">
                 {skills.map((skill, index) => (
-                    <div key={index} className="text-center flex flex-col items-center" data-aos="fade-up" data-aos-delay={index * 100}>
+                    <motion.div
+                        key={index}
+                        className="text-center flex flex-col items-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 0.5,
+                            delay: index * 0.1
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                    >
                         <div className="relative w-28 h-28 mb-4">
                             <svg className="w-full h-full" viewBox="0 0 36 36">
                                 <path
@@ -65,7 +77,7 @@ const Skills = () => {
                             <p className="font-medium text-lg">{skill.name}</p>
                             <p className="text-blue-500 font-bold">{skill.proficiency}%</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </section>

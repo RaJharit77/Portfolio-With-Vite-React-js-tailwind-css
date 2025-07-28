@@ -1,103 +1,199 @@
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-const ThreeBackground = () => {
-    const canvasRef = useRef(null);
+const GalaxyBackground = () => {
+    const mountRef = useRef(null);
 
     useEffect(() => {
-        const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
-        let animationFrameId;
+        // Initialisation
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+        camera.position.z = 15;
 
-        const resizeCanvas = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        };
+        const renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setClearColor(0x000000, 0);
 
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
+        // Post-processing
+        const composer = new EffectComposer(renderer);
+        const renderPass = new RenderPass(scene, camera);
+        composer.addPass(renderPass);
 
-        const stars = [];
-        const starCount = Math.min(1000, window.innerWidth * window.innerHeight / 300);
-        const colors = ['#ffffff', '#9bb0ff', '#aabfff', '#cad7ff', '#f8f7ff', '#d4eaff'];
+        const bloomPass = new UnrealBloomPass(
+            new THREE.Vector2(window.innerWidth, window.innerHeight),
+            1.5,   // strength
+            0.4,   // radius
+            0.85   // threshold
+        );
+        composer.addPass(bloomPass);
 
-        for (let i = 0; i < starCount; i++) {
-            stars.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 2.5,
-                speed: Math.random() * 0.05,
-                opacity: Math.random() * 0.8 + 0.2,
-                color: colors[Math.floor(Math.random() * colors.length)]
-            });
+        // Création des étoiles
+        const starGeometry = new THREE.BufferGeometry();
+        const starMaterial = new THREE.PointsMaterial({
+            color: 0xffffff,
+            size: 0.7,
+            sizeAttenuation: true,
+            transparent: true,
+            opacity: 0.8
+        });
+
+        const starVertices = [];
+        for (let i = 0; i < 15000; i++) {
+            const x = THREE.MathUtils.randFloatSpread(2000);
+            const y = THREE.MathUtils.randFloatSpread(2000);
+            const z = THREE.MathUtils.randFloatSpread(2000);
+            starVertices.push(x, y, z);
         }
 
-        const animate = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+        const stars = new THREE.Points(starGeometry, starMaterial);
+        scene.add(stars);
 
-            const gradient = ctx.createRadialGradient(
-                canvas.width / 2, canvas.height / 2, 0,
-                canvas.width / 2, canvas.height / 2, canvas.width * 0.8
-            );
-            gradient.addColorStop(0, 'rgba(5, 5, 15, 0.8)');
-            gradient.addColorStop(1, 'rgba(0, 0, 10, 0.9)');
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        // Création de la nébuleuse
+        const nebulaGeometry = new THREE.BufferGeometry();
+        const nebulaMaterial = new THREE.PointsMaterial({
+            color: 0x5588ff,
+            size: 2,
+            sizeAttenuation: true,
+            transparent: true,
+            opacity: 0.1,
+            blending: THREE.AdditiveBlending
+        });
 
-            stars.forEach(star => {
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${hexToRgb(star.color)}, ${star.opacity})`;
-                ctx.fill();
+        const nebulaVertices = [];
+        for (let i = 0; i < 5000; i++) {
+            const radius = 100 + Math.random() * 300;
+            const phi = Math.random() * Math.PI * 2;
+            const theta = Math.random() * Math.PI;
 
-                star.x -= star.speed;
-                if (star.x < 0) {
-                    star.x = canvas.width;
-                    star.y = Math.random() * canvas.height;
-                }
+            const x = radius * Math.sin(theta) * Math.cos(phi);
+            const y = radius * Math.sin(theta) * Math.sin(phi);
+            const z = radius * Math.cos(theta);
+
+            nebulaVertices.push(x, y, z);
+        }
+
+        nebulaGeometry.setAttribute('position', new THREE.Float32BufferAttribute(nebulaVertices, 3));
+        const nebula = new THREE.Points(nebulaGeometry, nebulaMaterial);
+        scene.add(nebula);
+
+        // Création de Saturne
+        const createSaturn = () => {
+            // Planète principale
+            const planetGeometry = new THREE.SphereGeometry(40, 64, 64);
+            const planetMaterial = new THREE.MeshStandardMaterial({
+                color: 0xE3B04B,
+                roughness: 0.8,
+                metalness: 0.2
             });
+            const planet = new THREE.Mesh(planetGeometry, planetMaterial);
+            planet.position.set(150, 100, -400);
 
-            ctx.beginPath();
-            for (let i = 0; i < 5; i++) {
-                const centerX = canvas.width * (0.2 + Math.random() * 0.6);
-                const centerY = canvas.height * (0.2 + Math.random() * 0.6);
-                const radius = 50 + Math.random() * 200;
-                const gradient = ctx.createRadialGradient(
-                    centerX, centerY, 0,
-                    centerX, centerY, radius
-                );
-                gradient.addColorStop(0, `rgba(100, 120, 255, ${0.02 + Math.random() * 0.03})`);
-                gradient.addColorStop(1, 'rgba(5, 5, 15, 0)');
+            // Anneaux
+            const ringGeometry = new THREE.RingGeometry(60, 100, 64);
+            const ringMaterial = new THREE.MeshBasicMaterial({
+                color: 0xF1D3B3,
+                side: THREE.DoubleSide,
+                transparent: true,
+                opacity: 0.8
+            });
+            const rings = new THREE.Mesh(ringGeometry, ringMaterial);
+            rings.rotation.x = Math.PI / 3;
+            rings.position.set(150, 100, -400);
 
-                ctx.fillStyle = gradient;
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-                ctx.fill();
-            }
+            scene.add(planet);
+            scene.add(rings);
 
-            animationFrameId = requestAnimationFrame(animate);
+            return { planet, rings };
         };
 
+        // Création de Mars
+        const createMars = () => {
+            const planetGeometry = new THREE.SphereGeometry(30, 64, 64);
+            const planetMaterial = new THREE.MeshStandardMaterial({
+                color: 0xff7a45,
+                roughness: 0.9,
+                metalness: 0.1
+            });
+            const planet = new THREE.Mesh(planetGeometry, planetMaterial);
+            planet.position.set(-180, -120, -300);
+            scene.add(planet);
+            return planet;
+        };
+
+        // Création de Neptune
+        const createNeptune = () => {
+            const planetGeometry = new THREE.SphereGeometry(35, 64, 64);
+            const planetMaterial = new THREE.MeshStandardMaterial({
+                color: 0x4b70ff,
+                roughness: 0.8,
+                metalness: 0.2
+            });
+            const planet = new THREE.Mesh(planetGeometry, planetMaterial);
+            planet.position.set(200, -150, -350);
+            scene.add(planet);
+            return planet;
+        };
+
+        const saturn = createSaturn();
+        const mars = createMars();
+        const neptune = createNeptune();
+
+        // Animation
+        const clock = new THREE.Clock();
+
+        const animate = () => {
+            const elapsedTime = clock.getElapsedTime();
+
+            // Rotation des étoiles et nébuleuses
+            stars.rotation.x = elapsedTime * 0.0005;
+            stars.rotation.y = elapsedTime * 0.0007;
+            nebula.rotation.x = elapsedTime * 0.0003;
+            nebula.rotation.y = elapsedTime * 0.0002;
+
+            // Rotation des planètes
+            saturn.planet.rotation.y = elapsedTime * 0.01;
+            saturn.rings.rotation.y = elapsedTime * 0.012;
+            mars.rotation.y = elapsedTime * 0.015;
+            neptune.rotation.y = elapsedTime * 0.008;
+
+            // Effet de pulsation
+            const pulse = Math.sin(elapsedTime * 0.5) * 0.2 + 0.8;
+            stars.material.opacity = 0.6 * pulse;
+            nebula.material.opacity = 0.08 * pulse;
+
+            composer.render();
+            requestAnimationFrame(animate);
+        };
+
+        // Responsive
+        const handleResize = () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            composer.setSize(window.innerWidth, window.innerHeight);
+        };
+
+        window.addEventListener('resize', handleResize);
+        mountRef.current.appendChild(renderer.domElement);
         animate();
 
+        // Nettoyage
         return () => {
-            window.removeEventListener('resize', resizeCanvas);
-            cancelAnimationFrame(animationFrameId);
+            window.removeEventListener('resize', handleResize);
+            mountRef.current.removeChild(renderer.domElement);
+            renderer.dispose();
         };
     }, []);
 
-    const hexToRgb = (hex) => {
-        const r = parseInt(hex.slice(1, 3), 16);
-        const g = parseInt(hex.slice(3, 5), 16);
-        const b = parseInt(hex.slice(5, 7), 16);
-        return `${r}, ${g}, ${b}`;
-    };
-
-    return (
-        <canvas
-            ref={canvasRef}
-            className="fixed top-0 left-0 w-full h-full -z-10"
-        />
-    );
+    return <div ref={mountRef} className="fixed top-0 left-0 w-full h-full -z-10" />;
 };
 
-export default ThreeBackground;
+export default GalaxyBackground;
