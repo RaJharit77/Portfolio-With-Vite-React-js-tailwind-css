@@ -8,7 +8,6 @@ const ThreeBackground = () => {
     const mountRef = useRef(null);
 
     useEffect(() => {
-        // Initialisation
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
         camera.position.z = 15;
@@ -21,7 +20,6 @@ const ThreeBackground = () => {
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setClearColor(0x000000, 0);
 
-        // Post-processing
         const composer = new EffectComposer(renderer);
         const renderPass = new RenderPass(scene, camera);
         composer.addPass(renderPass);
@@ -34,7 +32,6 @@ const ThreeBackground = () => {
         );
         composer.addPass(bloomPass);
 
-        // Création des étoiles
         const starGeometry = new THREE.BufferGeometry();
         const starMaterial = new THREE.PointsMaterial({
             color: 0xffffff,
@@ -56,7 +53,6 @@ const ThreeBackground = () => {
         const stars = new THREE.Points(starGeometry, starMaterial);
         scene.add(stars);
 
-        // Création de la nébuleuse
         const nebulaGeometry = new THREE.BufferGeometry();
         const nebulaMaterial = new THREE.PointsMaterial({
             color: 0x5588ff,
@@ -92,10 +88,9 @@ const ThreeBackground = () => {
         const ambientLight = new THREE.AmbientLight(0x404040, 0.8);
         scene.add(ambientLight);
 
-        // Création de Mars - amélioration du relief
         const createMars = () => {
             const planetGeometry = new THREE.SphereGeometry(40, 128, 128);
-            // Ajout de bruit pour le relief
+
             const positionAttribute = planetGeometry.attributes.position;
             const vertex = new THREE.Vector3();
             
