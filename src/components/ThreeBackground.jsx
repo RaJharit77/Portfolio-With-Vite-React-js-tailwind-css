@@ -202,10 +202,9 @@ const ThreeBackground = () => {
             return planet;
         };
 
-        // Création de Jupiter - amélioration du relief
         const createJupiter = () => {
             const planetGeometry = new THREE.SphereGeometry(65, 128, 128);
-            // Ajout de bruit pour le relief
+
             const positionAttribute = planetGeometry.attributes.position;
             const vertex = new THREE.Vector3();
             
@@ -247,8 +246,7 @@ const ThreeBackground = () => {
             
             const planet = new THREE.Mesh(planetGeometry, jupiterMaterial);
             planet.position.set(-280, 200, -320);
-            
-            // Grande Tache Rouge avec relief
+
             const spotGeometry = new THREE.SphereGeometry(18, 64, 64);
             const spotMaterial = new THREE.MeshStandardMaterial({
                 color: 0xcc4444,
@@ -266,10 +264,9 @@ const ThreeBackground = () => {
             return planet;
         };
 
-        // Création de la Terre - amélioration du relief
         const createEarth = () => {
             const planetGeometry = new THREE.SphereGeometry(50, 128, 128);
-            // Ajout de bruit pour le relief
+
             const positionAttribute = planetGeometry.attributes.position;
             const vertex = new THREE.Vector3();
             
@@ -290,8 +287,7 @@ const ThreeBackground = () => {
             
             const planet = new THREE.Mesh(planetGeometry, earthMaterial);
             planet.position.set(40, -40, -200);
-            
-            // Continents avec relief
+
             const continentGeometry = new THREE.SphereGeometry(50.5, 128, 128);
             const continentMaterial = new THREE.MeshStandardMaterial({
                 color: 0x4caf50,
@@ -303,8 +299,7 @@ const ThreeBackground = () => {
             
             const continents = new THREE.Mesh(continentGeometry, continentMaterial);
             planet.add(continents);
-            
-            // Nuages avec relief
+
             const cloudGeometry = new THREE.SphereGeometry(51, 128, 128);
             const cloudMaterial = new THREE.MeshStandardMaterial({
                 color: 0xffffff,
@@ -327,7 +322,6 @@ const ThreeBackground = () => {
         const jupiter = createJupiter();
         const earth = createEarth();
 
-        // Correction des étoiles filantes - version visible et rapide
         const shootingStars = [];
         
         const createShootingStar = () => {
