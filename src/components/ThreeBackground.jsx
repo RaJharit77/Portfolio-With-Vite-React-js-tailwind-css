@@ -325,15 +325,12 @@ const ThreeBackground = () => {
         const shootingStars = [];
         
         const createShootingStar = () => {
-            // Utilisation d'une géométrie de ligne avec un dégradé
             const geometry = new THREE.BufferGeometry();
-            
-            // Position de départ aléatoire (dans le haut de l'écran)
+
             const startX = THREE.MathUtils.randFloatSpread(window.innerWidth * 0.8);
             const startY = window.innerHeight * 0.8 + Math.random() * window.innerHeight * 0.2;
-            const startZ = -100; // Devant la caméra
-            
-            // Direction vers le bas
+            const startZ = -100;
+
             const endX = startX + THREE.MathUtils.randFloatSpread(300) - 150;
             const endY = startY - 1500;
             const endZ = startZ + THREE.MathUtils.randFloatSpread(200) - 100;
