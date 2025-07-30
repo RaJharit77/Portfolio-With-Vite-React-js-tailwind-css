@@ -3,10 +3,9 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     const handleDownloadCV = () => {
-        // Créer un lien temporaire
         const link = document.createElement('a');
         link.href = '/pdf/CV-Rajoharitiana.pdf';
-        link.download = 'CV-Rajoharitiana.pdf'; // Nom du fichier à télécharger
+        link.download = 'CV-Rajoharitiana.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

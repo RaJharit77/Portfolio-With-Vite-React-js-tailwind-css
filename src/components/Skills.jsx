@@ -31,7 +31,7 @@ const Skills = () => {
     return (
         <section id="skills" className="py-20 text-white">
             <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">Compétences</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 px-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 px-4" data-aos="fade-up">
                 {skills.map((skill, index) => (
                     <motion.div
                         key={index}

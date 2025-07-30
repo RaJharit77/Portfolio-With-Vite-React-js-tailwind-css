@@ -1,6 +1,6 @@
+import React from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import React from 'react';
 
 const contacts = [
     {
@@ -36,7 +36,7 @@ const Contact = () => {
         <section id="contacts" className="py-20 bg-gray-900/80 text-white flex flex-col items-center justify-center min-h-screen w-full">
             <div className="container mx-auto px-4 lg:w-3/4">
                 <h2 className="text-4xl font-bold text-center mb-10" data-aos="fade-up">Contact</h2>
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
+                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full" data-aos="fade-up">
                     {contacts.map((contact, index) => (
                         <div
                             key={contact.href}

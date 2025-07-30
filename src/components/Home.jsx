@@ -3,7 +3,7 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <section id="home" className="min-h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left text-white pt-24 p-8 space-y-8 md:space-y-0 md:space-x-12 mt-0">
+        <section id="home" className="min-h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left text-white pt-0 p-8 space-y-8 md:space-y-0 md:space-x-12 mt-24">
             <div className="flex-[0.6]" data-aos="fade-up">
                 <h1 className="text-4xl sm:text-5xl font-bold mb-6 animated-text">Bienvenue sur mon Portfolio</h1>
                 {/**<h2 className="text-3xl sm:text-4xl font-bold mb-4">Je suis un Développeur</h2>*/}
@@ -34,7 +34,7 @@ const Home = () => {
             <div className="flex-[0.5] flex justify-center" data-aos="fade-up">
                 <img
                     src="/img/RaJharit.jpg"
-                    alt="Bienvenue"
+                    alt="RaJharit"
                     className="w-full sm:w-3/4 md:w-4/5 lg:w-2/3 rounded-xl"
                 />
             </div>
