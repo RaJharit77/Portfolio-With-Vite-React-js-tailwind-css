@@ -100,7 +100,6 @@ button:focus-visible {
   z-index: 10;
 }
 
-/* Styles pour les sections */
 section {
   position: relative;
   z-index: 1;
@@ -113,13 +112,11 @@ section {
   max-width: 95%;
 }
 
-/* Amélioration de la visibilité du texte */
 .text-white, h1, h2, h3, p, .btn-blue-marine, li {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 
-               0 0 10px rgba(100, 120, 255, 0.3);
+              0 0 10px rgba(100, 120, 255, 0.3);
 }
 
-/* Boutons */
 .btn-blue-marine {
   background-color: #003366;
   color: white;
