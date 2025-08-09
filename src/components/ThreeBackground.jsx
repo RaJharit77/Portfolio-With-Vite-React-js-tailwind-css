@@ -78,6 +78,138 @@ const ThreeBackground = () => {
         const stars = new THREE.Points(starGeometry, starMaterial);
         scene.add(stars);
 
+        // Nébuleuse galactique
+        const createNebula = () => {
+            const nebulaGroup = new THREE.Group();
+            
+            // Création des nuages de gaz
+            const nebulaClouds = [];
+            const colors = [
+                new THREE.Color(0x8a2be2), // Violet
+                new THREE.Color(0x4169e1), // Bleu roi
+                new THREE.Color(0x00bfff), // Bleu profond
+                new THREE.Color(0xff1493)  // Rose profond
+            ];
+            
+            for (let i = 0; i < 15; i++) {
+                const cloudGeometry = new THREE.SphereGeometry(
+                    80 + Math.random() * 120, 
+                    32, 
+                    32
+                );
+                
+                const color = colors[Math.floor(Math.random() * colors.length)].clone();
+                color.multiplyScalar(0.7 + Math.random() * 0.3);
+                
+                const cloudMaterial = new THREE.MeshBasicMaterial({
+                    color: color,
+                    transparent: true,
+                    opacity: 0.05 + Math.random() * 0.1,
+                    blending: THREE.AdditiveBlending,
+                    depthWrite: false
+                });
+                
+                const cloud = new THREE.Mesh(cloudGeometry, cloudMaterial);
+                
+                // Positionnement aléatoire
+                cloud.position.set(
+                    (Math.random() - 0.5) * 2000,
+                    (Math.random() - 0.5) * 1000,
+                    -1000 - Math.random() * 1500
+                );
+                
+                // Rotation aléatoire
+                cloud.rotation.set(
+                    Math.random() * Math.PI,
+                    Math.random() * Math.PI,
+                    Math.random() * Math.PI
+                );
+                
+                // Animation properties
+                cloud.userData = {
+                    rotationSpeed: new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.0002,
+                        (Math.random() - 0.5) * 0.0003,
+                        (Math.random() - 0.5) * 0.0001
+                    ),
+                    pulseSpeed: Math.random() * 0.2 + 0.05,
+                    originalScale: 1
+                };
+                
+                nebulaClouds.push(cloud);
+                nebulaGroup.add(cloud);
+            }
+            
+            scene.add(nebulaGroup);
+            return nebulaGroup;
+        };
+
+        const nebula = createNebula();
+
+        // Planètes lointaines
+        const createDistantPlanets = () => {
+            const planetsGroup = new THREE.Group();
+            const planetCount = 5;
+            
+            for (let i = 0; i < planetCount; i++) {
+                const radius = 15 + Math.random() * 30;
+                const distance = 1200 + Math.random() * 1800;
+                const angle = Math.random() * Math.PI * 2;
+                
+                const planetGeometry = new THREE.SphereGeometry(radius, 64, 64);
+                
+                // Création d'une texture procédurale simple
+                const colors = [
+                    new THREE.Color(0x8B4513), // Marron
+                    new THREE.Color(0x4682B4), // Acier bleu
+                    new THREE.Color(0x32CD32), // Vert lime
+                    new THREE.Color(0xFF4500), // Orange rougeâtre
+                    new THREE.Color(0x9370DB)  // Violet moyen
+                ];
+                
+                const color = colors[Math.floor(Math.random() * colors.length)].clone();
+                color.offsetHSL(
+                    (Math.random() - 0.5) * 0.1,
+                    (Math.random() - 0.5) * 0.1,
+                    (Math.random() - 0.5) * 0.1
+                );
+                
+                const planetMaterial = new THREE.MeshStandardMaterial({
+                    color: color,
+                    roughness: 0.8 + Math.random() * 0.2,
+                    metalness: 0.1 + Math.random() * 0.2,
+                    emissive: color.clone().multiplyScalar(0.1)
+                });
+                
+                const planet = new THREE.Mesh(planetGeometry, planetMaterial);
+                
+                // Positionnement
+                planet.position.set(
+                    Math.cos(angle) * distance,
+                    (Math.random() - 0.5) * 400,
+                    -distance
+                );
+                
+                // Animation properties
+                planet.userData = {
+                    rotationSpeed: new THREE.Vector3(
+                        (Math.random() - 0.5) * 0.001,
+                        (Math.random() - 0.5) * 0.002,
+                        (Math.random() - 0.5) * 0.0005
+                    ),
+                    orbitSpeed: (Math.random() * 0.1 + 0.05) * (i % 2 === 0 ? 1 : -1),
+                    originalPosition: planet.position.clone()
+                };
+                
+                planetsGroup.add(planet);
+            }
+            
+            scene.add(planetsGroup);
+            return planetsGroup;
+        };
+
+        const distantPlanets = createDistantPlanets();
+
         // Lumière
         const sunLight = new THREE.PointLight(0xffffbb, 6, 5000, 2.0);
         sunLight.position.set(0, 0, 0);
@@ -213,6 +345,37 @@ const ThreeBackground = () => {
 
             stars.rotation.y = elapsedTime * 0.00025;
 
+            // Animation de la nébuleuse
+            if (nebula) {
+                nebula.children.forEach(cloud => {
+                    cloud.rotation.x += cloud.userData.rotationSpeed.x;
+                    cloud.rotation.y += cloud.userData.rotationSpeed.y;
+                    cloud.rotation.z += cloud.userData.rotationSpeed.z;
+                    
+                    // Effet de pulsation
+                    const pulse = Math.sin(elapsedTime * cloud.userData.pulseSpeed) * 0.2 + 0.8;
+                    cloud.scale.set(pulse, pulse, pulse);
+                    
+                    // Variation d'opacité subtile
+                    cloud.material.opacity = 0.05 + Math.sin(elapsedTime * cloud.userData.pulseSpeed * 0.5) * 0.05;
+                });
+            }
+
+            // Animation des planètes lointaines
+            if (distantPlanets) {
+                distantPlanets.children.forEach(planet => {
+                    // Rotation sur elles-mêmes
+                    planet.rotation.x += planet.userData.rotationSpeed.x;
+                    planet.rotation.y += planet.userData.rotationSpeed.y;
+                    planet.rotation.z += planet.userData.rotationSpeed.z;
+                    
+                    // Orbite autour du centre
+                    const angle = elapsedTime * planet.userData.orbitSpeed;
+                    planet.position.x = planet.userData.originalPosition.x * Math.cos(angle);
+                    planet.position.z = planet.userData.originalPosition.z * Math.sin(angle);
+                });
+            }
+
             if (sun) {
                 sun.rotation.y = elapsedTime * 0.01;
                 const pulse = 1 + Math.sin(elapsedTime * 0.8) * 0.2;
@@ -279,6 +442,7 @@ const ThreeBackground = () => {
             }
             renderer.dispose();
 
+            // Nettoyage des étoiles filantes
             shootingStars.forEach(star => {
                 scene.remove(star.mesh);
                 star.mesh.children.forEach(child => {
@@ -286,6 +450,23 @@ const ThreeBackground = () => {
                     if (child.material) child.material.dispose();
                 });
             });
+
+            if (nebula) {
+                nebula.children.forEach(cloud => {
+                    if (cloud.geometry) cloud.geometry.dispose();
+                    if (cloud.material) cloud.material.dispose();
+                });
+                scene.remove(nebula);
+            }
+
+            // Nettoyage des planètes lointaines
+            if (distantPlanets) {
+                distantPlanets.children.forEach(planet => {
+                    if (planet.geometry) planet.geometry.dispose();
+                    if (planet.material) planet.material.dispose();
+                });
+                scene.remove(distantPlanets);
+            }
         };
     }, []);
 
