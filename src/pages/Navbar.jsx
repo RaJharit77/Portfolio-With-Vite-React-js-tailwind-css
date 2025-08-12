@@ -1,12 +1,12 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LiaTimesSolid } from "react-icons/lia";
 import { RiMenu3Line } from "react-icons/ri";
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
-    const [scrollPosition, setScrollPosition] = useState(0);
+    const [, setScrollPosition] = useState(0);
     const [lastScrollPosition, setLastScrollPosition] = useState(0);
     const [navVisible, setNavVisible] = useState(true);
     const [menuOpen, setMenuOpen] = useState(false);

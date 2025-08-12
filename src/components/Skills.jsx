@@ -1,7 +1,6 @@
-import React from 'react';
 import { BiLogoSpringBoot } from "react-icons/bi";
-import { FaBootstrap, FaCss3Alt, FaFigma, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6';
-import { SiNextdotjs, SiOpenapiinitiative, SiPostgresql, SiPrisma, SiReactbootstrap, SiSqlite, SiTailwindcss, SiTypescript, SiVite, SiPython } from "react-icons/si";
+import { FaCss3Alt, FaGitAlt, FaGithub, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa6';
+import { SiNextdotjs, SiOpenapiinitiative, SiPostgresql, SiPrisma, SiSqlite, SiTailwindcss, SiTypescript, SiVite, SiPython } from "react-icons/si";
 import { motion } from 'framer-motion';
 
 const skills = [

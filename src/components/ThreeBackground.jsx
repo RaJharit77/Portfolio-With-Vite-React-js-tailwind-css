@@ -437,7 +437,7 @@ const ThreeBackground = () => {
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            if (mountRef.current && renderer.domElement && mountRef.current.contains(renderer.domElement)) {
+            if (mountRef.current && renderer.domElement && mountRef.current.contains(renderer.domElement)) { 
                 mountRef.current.removeChild(renderer.domElement);
             }
             renderer.dispose();
