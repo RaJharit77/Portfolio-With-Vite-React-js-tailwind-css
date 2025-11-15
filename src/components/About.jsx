@@ -25,7 +25,7 @@ const About = () => {
             <p className="text-lg max-w-2xl mb-8" data-aos="fade-up">
                 Bonjour ! Je m&apos;appelle Rajoharitiana, un développeur front-end créatif et passionné basé à Madagascar. Je suis spécialisé dans la conception et le développement d&apos;interfaces utilisateur modernes et intuitives,
                 offrant des expériences engageantes et réactives.
-                Avec une solide expérience acquise au cours de mes études en licence (L2) et divers projets personnels,
+                Avec une solide expérience acquise au cours de mes études en licence (L3) et divers projets personnels,
                 j&apos;ai développé des compétences dans des technologies front-end telles que React.js, Tailwind CSS, Next.js et bien d&apos;autres.
                 <br /><br />
                 Mon objectif est de transformer des idées en interfaces fonctionnelles et esthétiques tout en assurant une expérience utilisateur optimale.
