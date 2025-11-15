@@ -8,7 +8,7 @@ const Home = () => {
                 <h1 className="text-4xl sm:text-5xl font-bold mb-6 animated-text">Bienvenue sur mon Portfolio</h1>
                 {/**<h2 className="text-3xl sm:text-4xl font-bold mb-4">Je suis un Développeur</h2>*/}
                 <p className="text-lg sm:text-xl leading-relaxed max-w-3xl text-animation mb-6">
-                    Je suis actuellement un étudiant en deuxième année à l'Haute École d'Informatique ou HEI.<br />
+                    Je suis actuellement un étudiant en troisième année à l'Haute École d'Informatique ou HEI.<br />
                     Je suis passioné du développement Web du côté Front-end, je suis motivé pour créer des sites créatifs
                     et de la création d'applications Web pour ma passion en
                     Informatique et la nouvelle technologie.<br />
